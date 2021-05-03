@@ -1,0 +1,10 @@
+name: feature_select
+dependencies:
+  - os
+  - streamlit
+  - numpy
+  - pandas
+  - base64
+  - matplotlib
+  - scipy
+  - seaborn
