@@ -56,7 +56,7 @@ if uploaded_file is not None:
     cat_or_cont = st.sidebar.selectbox("Is the target categorical or continuous?",("Categorical", "Continuous"),index=1,\
         help = "This will help determine which type of algorithm to run - classification or regression.")
 
-    max_num = int(len(features_list))
+    max_num = int(len(features_list)-1)
     num_features = st.sidebar.number_input("Number of selected features",min_value=1,max_value=max_num,value=10,\
         help="Consider the purpose of this feature selection. When in doubt, select a higher number of features.")
 
