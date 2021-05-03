@@ -67,8 +67,8 @@ if uploaded_file is not None:
         help = "Remove certain features from the chosen features list.")
 
     with st.sidebar.beta_expander('Advanced Options'):
-        algo = st.selectbox("Choose feature selection algorithm",["MRMR","Mutual Info"],\
-            help = "MRMR (default): good for redundant data, Mutual Info: good for non-linear data with few redundant variables")
+        algo = st.selectbox("Choose feature selection algorithm",["Mutual Info","MRMR"],\
+            help = "MRMR: good for redundant data, Mutual Info: good for non-linear data with few redundant variables or when redundancy doesn't matter.")
 
     #Checks if target variable exists in keep or remove lists
     if (target in remove) or (target in must_haves):
