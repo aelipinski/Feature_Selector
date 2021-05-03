@@ -39,7 +39,7 @@ def selector(df,target,algo,cat_or_cont):
     # rank = rank.set_index('Feature')
     return rank
 
-uploaded_file = st.file_uploader("Choose a file",type='csv',accept_multiple_files=False)
+uploaded_file = st.file_uploader("Choose a file",type='csv',accept_multiple_files=False, help="Data must be a CSV file with labeled columns for features (including target) and data points as rows.")
 
 if uploaded_file is not None:
 
