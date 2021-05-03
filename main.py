@@ -10,8 +10,6 @@ import matplotlib.pyplot as plt
 from scipy import stats
 import seaborn as sns
 
-#FILL OUT TOOLTIPS
-
 st.title("Feature Selector")
 st.write("A simple interface for removing unnecessary features")
 st.header("**1. Import**")
