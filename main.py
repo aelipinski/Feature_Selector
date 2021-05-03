@@ -46,6 +46,7 @@ if uploaded_file is not None:
     data = pd.read_csv(uploaded_file)
     data = data.dropna()
     data = data.select_dtypes(['number'])
+    #data['noise_marker'] = np.random.normal(size=len(data))
     features_list = data.columns
 
     st.sidebar.header('Control Panel')
@@ -67,7 +68,7 @@ if uploaded_file is not None:
         help = "Remove certain features from the chosen features list.")
 
     with st.sidebar.beta_expander('Advanced Options'):
-        algo = st.selectbox("Choose feature selection algorithm",["Mutual Info","MRMR"],\
+        algo = st.selectbox("Choose feature selection algorithm",["MRMR","Mutual Info"],\
             help = "MRMR: good for redundant data, Mutual Info: good for non-linear data with few redundant variables or when redundancy doesn't matter.")
 
     #Checks if target variable exists in keep or remove lists
