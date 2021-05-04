@@ -110,6 +110,7 @@ if uploaded_file is not None:
 
     chosen_export = [feature for feature in chosen if feature in chosen_final]
     chosen_export_df = pd.DataFrame(chosen_export,columns=['Feature'])
+    chosen_export_df.index = np.arange(1, len(chosen_export_df) + 1)
     st.dataframe(chosen_export_df)
 
     with st.beta_expander('Expand to see feature distributions'):
