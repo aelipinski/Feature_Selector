@@ -44,7 +44,9 @@ uploaded_file = st.file_uploader("Choose a file",type='csv',accept_multiple_file
 if uploaded_file is not None:
 
     data = pd.read_csv(uploaded_file)
-    data = data.dropna()
+    col_thresh = int(.1*len(data))
+    data = data.dropna(axis=1,thresh=col_thresh) #drop mostly empty columns, require at least col_thresh values
+    data = data.dropna(axis=0,how='any') #then, drop rows that contain at least one NA
     data = data.select_dtypes(['number'])
     #data['noise_marker'] = np.random.normal(size=len(data))
     features_list = data.columns
